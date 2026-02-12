@@ -1,0 +1,19 @@
+{
+  "name": "opsfloor",
+  "private": true,
+  "description": "Banana Bank Operations Floor — single-command local host",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "postinstall": "npm run install:all",
+    "build": "npm run build --prefix client",
+    "start": "npm run build --prefix client && npm run start --prefix server",
+    "start:server": "npm run start --prefix server",
+    "dev": "concurrently -n s,c -c yellow,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

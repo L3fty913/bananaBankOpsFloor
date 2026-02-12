@@ -61,6 +61,18 @@ db.exec(`
   CREATE INDEX IF NOT EXISTS idx_events_ts ON events(ts);
 `);
 
+// Migration: add optional hierarchy columns to agents (run on existing DBs)
+function migrateAgentsTable() {
+  const cols = db.prepare('PRAGMA table_info(agents)').all().map((r) => r.name);
+  if (!cols.includes('parent_agent_id')) {
+    db.exec('ALTER TABLE agents ADD COLUMN parent_agent_id TEXT');
+  }
+  if (!cols.includes('working_with_agent_id')) {
+    db.exec('ALTER TABLE agents ADD COLUMN working_with_agent_id TEXT');
+  }
+}
+migrateAgentsTable();
+
 const defaultRooms = [
   {
     id: 'ops',
@@ -89,7 +101,7 @@ const upsertRoom = db.prepare(
 for (const r of defaultRooms) upsertRoom.run(r.id, r.name, r.type, JSON.stringify(r.permissions));
 
 // Optional agent bootstrap: provide a JSON array via OPS_AGENTS_JSON or a file path OPS_AGENTS_FILE
-// Example: [{"id":"caesar","name":"Caesar","role":"Manager"}, ...]
+// Example: [{"id":"caesar","name":"Caesar","role":"Manager","parentAgentId":null}, ...]
 function bootstrapAgents() {
   try {
     let raw = process.env.OPS_AGENTS_JSON;
@@ -101,15 +113,19 @@ function bootstrapAgents() {
     if (!Array.isArray(arr)) return;
     const now = Date.now();
     const upsertAgent = db.prepare(
-      `INSERT INTO agents(id,name,role,status,lastSeen,currentTask)
-       VALUES(?,?,?,?,?,?)
+      `INSERT INTO agents(id,name,role,status,lastSeen,currentTask,parent_agent_id,working_with_agent_id)
+       VALUES(?,?,?,?,?,?,?,?)
        ON CONFLICT(id) DO UPDATE SET
          name=excluded.name,
-         role=excluded.role`
+         role=excluded.role,
+         parent_agent_id=excluded.parent_agent_id,
+         working_with_agent_id=excluded.working_with_agent_id`
     );
     for (const a of arr) {
       if (!a?.id || !a?.name) continue;
-      upsertAgent.run(a.id, a.name, a.role || 'Agent', 'idle', now, a.currentTask || '');
+      const parentId = a.parentAgentId ?? null;
+      const workingWith = a.workingWithAgentId ?? null;
+      upsertAgent.run(a.id, a.name, a.role || 'Agent', 'idle', now, a.currentTask || '', parentId, workingWith);
       // ensure agent room exists
       upsertRoom.run(`agent-${a.id}`, `#agent-${a.name}`, 'agent', JSON.stringify({ morpheus: 'admin', agents: 'roomOnly' }));
     }
@@ -378,8 +394,22 @@ function queueOrSendAgentMessage(agentId, payload) {
   return { queued: false };
 }
 
+function mapAgentRow(row) {
+  return {
+    id: row.id,
+    name: row.name,
+    role: row.role,
+    status: row.status,
+    lastSeen: row.lastSeen,
+    currentTask: row.currentTask,
+    parentAgentId: row.parent_agent_id ?? null,
+    workingWithAgentId: row.working_with_agent_id ?? null,
+  };
+}
+
 function getState(limitPerRoom = 200) {
-  const agents = db.prepare('SELECT * FROM agents ORDER BY name ASC').all();
+  const rows = db.prepare('SELECT * FROM agents ORDER BY name ASC').all();
+  const agents = rows.map(mapAgentRow);
   const rooms = db.prepare('SELECT * FROM rooms').all().map((r) => ({
     ...r,
     permissions: JSON.parse(r.permissions_json),
@@ -453,22 +483,27 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
+    // POST /workspace/status — body may include optional parentAgentId (sub-agent's lead), workingWithAgentId (agent they're working with)
     if (req.method === 'POST' && u.pathname === '/workspace/status') {
       const body = await readBody(req);
-      const { agentId, name, role, status, currentTask } = body;
+      const { agentId, name, role, status, currentTask, parentAgentId, workingWithAgentId } = body;
       if (!agentId || !name) return json(res, 400, { ok: false, error: 'agentId and name required' });
       const now = Date.now();
+      const parentId = parentAgentId ?? null;
+      const workingWith = workingWithAgentId ?? null;
       db.prepare(
-        `INSERT INTO agents(id,name,role,status,lastSeen,currentTask)
-         VALUES(?,?,?,?,?,?)
+        `INSERT INTO agents(id,name,role,status,lastSeen,currentTask,parent_agent_id,working_with_agent_id)
+         VALUES(?,?,?,?,?,?,?,?)
          ON CONFLICT(id) DO UPDATE SET
            name=excluded.name,
            role=excluded.role,
            status=excluded.status,
            lastSeen=excluded.lastSeen,
-           currentTask=excluded.currentTask`
-      ).run(agentId, name, role || 'Agent', status || 'idle', now, currentTask || '');
-      emitEvent('status_update', { agentId, status, currentTask, lastSeen: now });
+           currentTask=excluded.currentTask,
+           parent_agent_id=excluded.parent_agent_id,
+           working_with_agent_id=excluded.working_with_agent_id`
+      ).run(agentId, name, role || 'Agent', status || 'idle', now, currentTask || '', parentId, workingWith);
+      emitEvent('status_update', { agentId, status, currentTask, lastSeen: now, parentAgentId: parentId, workingWithAgentId: workingWith });
       return json(res, 200, { ok: true });
     }
 
@@ -547,6 +582,19 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
+// #region agent log
+fetch('http://127.0.0.1:7251/ingest/68b81d08-fb96-4fa5-97d2-e0c3e0f1ee85',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.js:listen',message:'listen attempt',data:{port:PORT,pid:process.pid},timestamp:Date.now(),hypothesisId:'H1'})}).catch(()=>{});
+// #endregion
+server.on('error', (err) => {
+  // #region agent log
+  fetch('http://127.0.0.1:7251/ingest/68b81d08-fb96-4fa5-97d2-e0c3e0f1ee85',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.js:server.error',message:'listen error',data:{code:err.code,errno:err.errno,port:PORT},timestamp:Date.now(),hypothesisId:'H2'})}).catch(()=>{});
+  // #endregion
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Stop the other process or run with PORT=8791 (e.g. PORT=8791 node src/index.js).`);
+    process.exit(1);
+  }
+  throw err;
+});
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`opsfloor-server listening on :${PORT} db=${DB_PATH}`);
 });

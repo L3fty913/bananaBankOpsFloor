@@ -9,6 +9,8 @@ export type Agent = {
   status: AgentStatus;
   lastSeen: number; // unix ms
   currentTask: string;
+  parentAgentId?: string | null;
+  workingWithAgentId?: string | null;
 };
 
 export type Room = {
