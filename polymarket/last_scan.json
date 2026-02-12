@@ -1,0 +1,400 @@
+{
+  "scan_time": "2026-02-12T04:06:44.578288+00:00",
+  "total_markets": 500,
+  "binary_underpriced": [],
+  "binary_overpriced": [],
+  "high_prob_bonds": [
+    {
+      "side": "NO",
+      "market": "Will the San Antonio Spurs win the NBA Western Conference Finals?",
+      "market_id": "564218",
+      "price": 0.903,
+      "profit_per_share": 0.09699999999999998,
+      "roi_pct": 10.741971207087483,
+      "token": "27815004243594045632881165458415700890962215209489505987194656563693307762869",
+      "volume": "60645.879844",
+      "liquidity": "74198.96548",
+      "end_date": "2026-06-16T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Wesley Hunt win the 2026 Texas Republican Primary?",
+      "market_id": "562190",
+      "price": 0.904,
+      "profit_per_share": 0.09599999999999997,
+      "roi_pct": 10.61946902654867,
+      "token": "100333398771549990435986817872587460650263444431054342556176662063680731819090",
+      "volume": "690692.983416",
+      "liquidity": "21886.62007",
+      "end_date": "2026-03-03T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will the U.S. collect between $200b and $500b in revenue in 2025?",
+      "market_id": "537486",
+      "price": 0.905,
+      "profit_per_share": 0.09499999999999997,
+      "roi_pct": 10.49723756906077,
+      "token": "50221315964000194764695024582522009520159992363520263771661265416131198909217",
+      "volume": "714227.03472",
+      "liquidity": "9093.9449",
+      "end_date": "2026-02-28T12:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will the Carolina Hurricanes win the 2026 NHL Stanley Cup?",
+      "market_id": "553824",
+      "price": 0.905,
+      "profit_per_share": 0.09499999999999997,
+      "roi_pct": 10.49723756906077,
+      "token": "40473977441010332007887229299980126707900816205713676157646215720073415416624",
+      "volume": "92747.134003",
+      "liquidity": "76793.4499",
+      "end_date": "2026-06-30T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Alexandria Ocasio-Cortez win the 2028 Democratic presidential nomination?",
+      "market_id": "559653",
+      "price": 0.905,
+      "profit_per_share": 0.09499999999999997,
+      "roi_pct": 10.49723756906077,
+      "token": "65176072261324737856085688071627118509549293922582857186996392180609764586527",
+      "volume": "3878358.185087",
+      "liquidity": "451649.9119",
+      "end_date": "2028-11-07T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Man City win the 2025\u201326 Champions League?",
+      "market_id": "566141",
+      "price": 0.905,
+      "profit_per_share": 0.09499999999999997,
+      "roi_pct": 10.49723756906077,
+      "token": "112574489854879876348403352508736279198755657572621272542900243530924839503706",
+      "volume": "1161362.284312",
+      "liquidity": "228494.7741",
+      "end_date": "2026-05-31T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Trump pardon Ghislaine Maxwell by end of 2026?",
+      "market_id": "566760",
+      "price": 0.905,
+      "profit_per_share": 0.09499999999999997,
+      "roi_pct": 10.49723756906077,
+      "token": "71144742975537017512904527392353107518472601816123355990566837993879064231255",
+      "volume": "410211.205685",
+      "liquidity": "44022.2546",
+      "end_date": "2026-12-31T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Lens win the 2025\u201326 French Ligue 1?",
+      "market_id": "566737",
+      "price": 0.914,
+      "profit_per_share": 0.08599999999999997,
+      "roi_pct": 9.409190371991242,
+      "token": "32562890083332327801535125145831767630420757200775626196821202901319165279557",
+      "volume": "46153.509046",
+      "liquidity": "15431.42003",
+      "end_date": "2026-05-30T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will the Edmonton Oilers win the 2026 NHL Stanley Cup?",
+      "market_id": "553826",
+      "price": 0.915,
+      "profit_per_share": 0.08499999999999996,
+      "roi_pct": 9.289617486338795,
+      "token": "93243135936056253080731148169253301176422868656587067154045597758216732275467",
+      "volume": "255746.638624",
+      "liquidity": "43155.8385",
+      "end_date": "2026-06-30T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Brazil win the 2026 FIFA World Cup?",
+      "market_id": "558937",
+      "price": 0.915,
+      "profit_per_share": 0.08499999999999996,
+      "roi_pct": 9.289617486338795,
+      "token": "52986718774908357330412653486471347449818893503063830313445318937088822580057",
+      "volume": "1176583.97804",
+      "liquidity": "549831.7961",
+      "end_date": "2026-07-20T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Xi Jinping out before 2027?",
+      "market_id": "559651",
+      "price": 0.915,
+      "profit_per_share": 0.08499999999999996,
+      "roi_pct": 9.289617486338795,
+      "token": "25659310674993675562345759665114759892400026242514633218387667107987341231962",
+      "volume": "6080646.239904",
+      "liquidity": "213463.3863",
+      "end_date": "2026-12-31T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Liverpool win the 2025\u201326 Champions League?",
+      "market_id": "566137",
+      "price": 0.915,
+      "profit_per_share": 0.08499999999999996,
+      "roi_pct": 9.289617486338795,
+      "token": "61363321151738894082270158001558726485654573525177047497641264416022287833194",
+      "volume": "1698935.036168",
+      "liquidity": "411988.1461",
+      "end_date": "2026-05-31T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will the Minnesota Timberwolves win the NBA Western Conference Finals?",
+      "market_id": "564214",
+      "price": 0.917,
+      "profit_per_share": 0.08299999999999996,
+      "roi_pct": 9.051254089422024,
+      "token": "49028495687486892054365092594166410364434486278679913735039487330259821983425",
+      "volume": "147300.69186",
+      "liquidity": "77404.83553",
+      "end_date": "2026-06-16T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Rory McIlroy win the 2026 Masters tournament?",
+      "market_id": "568630",
+      "price": 0.925,
+      "profit_per_share": 0.07499999999999996,
+      "roi_pct": 8.108108108108103,
+      "token": "110721526829271696628816884619360240907697405805387139784530202893346118060669",
+      "volume": "11471.104936",
+      "liquidity": "16740.1162",
+      "end_date": "2026-04-13T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will the San Antonio Spurs win the 2026 NBA Finals?",
+      "market_id": "553866",
+      "price": 0.9255,
+      "profit_per_share": 0.07450000000000001,
+      "roi_pct": 8.049702863317128,
+      "token": "12636035070565821048178968461063687179393834041535317885287743395873720755118",
+      "volume": "3747344.814796",
+      "liquidity": "163233.36188",
+      "end_date": "2026-07-01T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will the Houston Rockets win the NBA Western Conference Finals?",
+      "market_id": "564212",
+      "price": 0.9265,
+      "profit_per_share": 0.07350000000000001,
+      "roi_pct": 7.9330814894765265,
+      "token": "98201496215280693602958996033097514949070099304644235499058064345773729243771",
+      "volume": "330852.339385",
+      "liquidity": "70238.80618",
+      "end_date": "2026-06-16T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Marco Rubio win the 2028 US Presidential Election?",
+      "market_id": "561234",
+      "price": 0.9275,
+      "profit_per_share": 0.07250000000000001,
+      "roi_pct": 7.816711590296498,
+      "token": "65892530750232246342273648992064742042382898919201083513241874070914353628268",
+      "volume": "3267042.822891",
+      "liquidity": "287737.17913",
+      "end_date": "2028-11-07T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will Portugal win the 2026 FIFA World Cup?",
+      "market_id": "558940",
+      "price": 0.929,
+      "profit_per_share": 0.07099999999999995,
+      "roi_pct": 7.642626480086108,
+      "token": "31940783580344558651011323787577288681658737625185216525249046282994042503801",
+      "volume": "4892818.835875",
+      "liquidity": "226232.2748",
+      "end_date": "2026-07-20T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will the Philadelphia 76ers win the NBA Eastern Conference Finals?",
+      "market_id": "564199",
+      "price": 0.9305,
+      "profit_per_share": 0.0695,
+      "roi_pct": 7.469102632993015,
+      "token": "407336258606092316833789781486672854343361331985279263948001098476429338355",
+      "volume": "178092.648134",
+      "liquidity": "66499.09551",
+      "end_date": "2026-06-13T00:00:00Z"
+    },
+    {
+      "side": "NO",
+      "market": "Will the Vegas Golden Knights win the 2026 NHL Stanley Cup?",
+      "market_id": "553829",
+      "price": 0.9315,
+      "profit_per_share": 0.0685,
+      "roi_pct": 7.35373054213634,
+      "token": "58534831224432332845742394199681128700782343287162911891204466367752298448751",
+      "volume": "416812.379106",
+      "liquidity": "76040.75165",
+      "end_date": "2026-06-30T00:00:00Z"
+    }
+  ],
+  "event_opportunities": [
+    {
+      "type": "event_overpriced",
+      "event": "What will happen before GTA VI?",
+      "num_outcomes": 9,
+      "total_yes_cost": 5.2195,
+      "excess": 4.2195,
+      "excess_pct": 80.84107673148769,
+      "details": [
+        {
+          "question": "Russia-Ukraine Ceasefire before GTA VI?",
+          "yes_price": 0.6,
+          "token": "8501497159083948713316135768103773293754490207922884688769443031624417212426"
+        },
+        {
+          "question": "New Rihanna Album before GTA VI?",
+          "yes_price": 0.53,
+          "token": "98022490269692409998126496127597032490334070080325855126491859374983463996227"
+        },
+        {
+          "question": "New Playboi Carti Album before GTA VI?",
+          "yes_price": 0.625,
+          "token": "88275040060084773376557187972215267513049848642895776801789297917961077894224"
+        },
+        {
+          "question": "Will Jesus Christ return before GTA VI?",
+          "yes_price": 0.48,
+          "token": "90435811253665578014957380826505992530054077692143838383981805324273750424057"
+        },
+        {
+          "question": "Trump out as President before GTA VI?",
+          "yes_price": 0.525,
+          "token": "108999723207897941876452935557011604067917389120996960199512481363958770540884"
+        },
+        {
+          "question": "Will China invades Taiwan before GTA VI?",
+          "yes_price": 0.525,
+          "token": "21695138873211375451055566770107682325494206727818897067665810321709249824909"
+        },
+        {
+          "question": "Will bitcoin hit $1m before GTA VI?",
+          "yes_price": 0.485,
+          "token": "105267568073659068217311993901927962476298440625043565106676088842803600775810"
+        },
+        {
+          "question": "Will GPT-6 be released before GTA VI?",
+          "yes_price": 0.585,
+          "token": "71552623345730992280501476931299615437386807576519105089437764117985071980606"
+        },
+        {
+          "question": "Will Drake release Iceman before GTA VI?",
+          "yes_price": 0.8645,
+          "token": "40694415003591202786878279287884766002429923551809555441858630935269489320071"
+        }
+      ]
+    },
+    {
+      "type": "event_overpriced",
+      "event": "Harvey Weinstein prison time?",
+      "num_outcomes": 6,
+      "total_yes_cost": 1.177,
+      "excess": 0.17700000000000005,
+      "excess_pct": 15.038232795242145,
+      "details": [
+        {
+          "question": "Will Harvey Weinstein be sentenced to no prison time?",
+          "yes_price": 0.303,
+          "token": "24327803960645909378149041810697343640752122608192367041827900158592826352552"
+        },
+        {
+          "question": "Will Harvey Weinstein be sentenced to less than 5 years in prison?",
+          "yes_price": 0.288,
+          "token": "77166477669007661974218999697956080000161736671391584414287437514245884953047"
+        },
+        {
+          "question": "Will Harvey Weinstein be sentenced to between 5 and 10 years in prison?",
+          "yes_price": 0.036,
+          "token": "8585617872562550075367684165842985213222082790621129799520234539666057750015"
+        },
+        {
+          "question": "Will Harvey Weinstein be sentenced to between 10 and 20 years in prison?",
+          "yes_price": 0.2515,
+          "token": "15540133404064485946536607974212890170021691204987131841181394872998839987451"
+        },
+        {
+          "question": "Will Harvey Weinstein be sentenced to between 20 and 30 years in prison?",
+          "yes_price": 0.262,
+          "token": "40689385937970031985272152180777653235879119412231903065658922913468759560353"
+        },
+        {
+          "question": "Will Harvey Weinstein be sentenced to more than 30 years in prison?",
+          "yes_price": 0.0365,
+          "token": "87036266705700330884624690101790543034325645582506946990660049003915176778714"
+        }
+      ]
+    },
+    {
+      "type": "event_underpriced",
+      "event": "How many people will Trump deport in 2025?",
+      "num_outcomes": 9,
+      "total_yes_cost": 0.9199999999999999,
+      "profit_per_set": 0.08000000000000007,
+      "profit_pct": 8.695652173913052,
+      "details": [
+        {
+          "question": "Will Trump deport less than 250,000?",
+          "yes_price": 0.02,
+          "token": "101676997363687199724245607342877036148401850938023978421879460310389391082353"
+        },
+        {
+          "question": "Will Trump deport 250,000-500,000 people?",
+          "yes_price": 0.858,
+          "token": "13244681086321087932946246027856416106585284024824496763706748621681543444582"
+        },
+        {
+          "question": "Will Trump deport 500,000-750,000- people?",
+          "yes_price": 0.022,
+          "token": "100074770378634056601572485653252702850363676459996771990439989989293515601975"
+        },
+        {
+          "question": "Will Trump deport 750,000-1,000,000 people?",
+          "yes_price": 0.0055,
+          "token": "49194009556504828848509244326501559253829462790583873936160989575507522044057"
+        },
+        {
+          "question": "Will Trump deport 1,000,000-1,250,000 people?",
+          "yes_price": 0.0035,
+          "token": "13018971792603393862521629014128024641178044618205296260525674415067194037856"
+        },
+        {
+          "question": "Will Trump deport 1,750,000-2,000,000 people?",
+          "yes_price": 0.003,
+          "token": "24682525479474221428144937281315825971983904267399062415430320764754931667953"
+        },
+        {
+          "question": "Will Trump deport 1,250,000-1,500,000 people?",
+          "yes_price": 0.003,
+          "token": "73414222381656326204771753454630063673548497164758947581648273905027617570612"
+        },
+        {
+          "question": "Will Trump deport 1,500,000-1,750,000 people?",
+          "yes_price": 0.003,
+          "token": "72354723612769247426741660426331235762851940382312402276325808095604519806766"
+        },
+        {
+          "question": "Will Trump deport 2,000,000 or more people?",
+          "yes_price": 0.002,
+          "token": "72012724360700510767037780555710363830014634797787940282136454146828040926557"
+        }
+      ]
+    }
+  ]
+}

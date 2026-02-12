@@ -1,0 +1,477 @@
+{
+  "scan_time": "2026-02-11T22:44:34.385206+00:00",
+  "promising_events": [
+    {
+      "title": "Champions League: Which teams advance to round of 16?",
+      "total_yes": 16.230999999999998,
+      "gap": 15.230999999999998,
+      "is_under": false,
+      "num_markets": 36
+    },
+    {
+      "title": "2026 FIFA World Cup: Which countries qualify?",
+      "total_yes": 15.489500000000001,
+      "gap": 14.489500000000001,
+      "is_under": false,
+      "num_markets": 33
+    },
+    {
+      "title": "What will happen before GTA VI?",
+      "total_yes": 5.231999999999999,
+      "gap": 4.231999999999999,
+      "is_under": false,
+      "num_markets": 9
+    },
+    {
+      "title": "EPL \u2013 Which Clubs Get Relegated?",
+      "total_yes": 3.8259999999999996,
+      "gap": 2.8259999999999996,
+      "is_under": false,
+      "num_markets": 20
+    },
+    {
+      "title": "Serie A - Which Clubs Get Relegated?",
+      "total_yes": 3.6534999999999997,
+      "gap": 2.6534999999999997,
+      "is_under": false,
+      "num_markets": 10
+    },
+    {
+      "title": "Which Parties will be part of next Government of the Netherlands?",
+      "total_yes": 3.117,
+      "gap": 2.117,
+      "is_under": false,
+      "num_markets": 16
+    },
+    {
+      "title": "La Liga - Which Clubs Get Relegated?",
+      "total_yes": 2.8225,
+      "gap": 1.8224999999999998,
+      "is_under": false,
+      "num_markets": 8
+    },
+    {
+      "title": "Which candidates will advance to Brazil's presidential runoff?",
+      "total_yes": 1.8555,
+      "gap": 0.8554999999999999,
+      "is_under": false,
+      "num_markets": 6
+    },
+    {
+      "title": "Bundesliga - Which Clubs Get Relegated?",
+      "total_yes": 1.8315000000000001,
+      "gap": 0.8315000000000001,
+      "is_under": false,
+      "num_markets": 6
+    },
+    {
+      "title": "When will Bitcoin hit $150k?",
+      "total_yes": 0.1855,
+      "gap": 0.8145,
+      "is_under": true,
+      "num_markets": 5
+    },
+    {
+      "title": "Ligue 1 - Which Clubs Get Relegated?",
+      "total_yes": 1.2140000000000002,
+      "gap": 0.2140000000000002,
+      "is_under": false,
+      "num_markets": 6
+    },
+    {
+      "title": "Harvey Weinstein prison time?",
+      "total_yes": 1.1725,
+      "gap": 0.1725000000000001,
+      "is_under": false,
+      "num_markets": 6
+    },
+    {
+      "title": "Where will Trump and Putin meet next?",
+      "total_yes": 1.0775,
+      "gap": 0.0774999999999999,
+      "is_under": false,
+      "num_markets": 15
+    },
+    {
+      "title": "How many people will Trump deport in 2025?",
+      "total_yes": 0.9239999999999998,
+      "gap": 0.07600000000000018,
+      "is_under": true,
+      "num_markets": 9
+    },
+    {
+      "title": "OpenAI IPO Closing Market Cap",
+      "total_yes": 0.9359999999999999,
+      "gap": 0.06400000000000006,
+      "is_under": true,
+      "num_markets": 7
+    },
+    {
+      "title": "Anthropic IPO Closing Market Cap",
+      "total_yes": 1.0205,
+      "gap": 0.020499999999999963,
+      "is_under": false,
+      "num_markets": 7
+    },
+    {
+      "title": "Discord IPO Closing Market Cap",
+      "total_yes": 1.0165,
+      "gap": 0.01649999999999996,
+      "is_under": false,
+      "num_markets": 6
+    },
+    {
+      "title": "GDP growth in 2025",
+      "total_yes": 1.0135,
+      "gap": 0.013500000000000068,
+      "is_under": false,
+      "num_markets": 6
+    },
+    {
+      "title": "How many Fed rate cuts in 2026?",
+      "total_yes": 1.01,
+      "gap": 0.010000000000000009,
+      "is_under": false,
+      "num_markets": 13
+    },
+    {
+      "title": "Databricks IPO Closing Market Cap",
+      "total_yes": 1.008,
+      "gap": 0.008000000000000007,
+      "is_under": false,
+      "num_markets": 8
+    }
+  ],
+  "bonds": [
+    {
+      "side": "NO",
+      "question": "Will Marco Rubio win the 2028 Republican presidential nomination?",
+      "price": 0.8845,
+      "profit": 0.11550000000000005,
+      "roi": 13.058224985867728,
+      "volume": 3855859.471703,
+      "liquidity": 149398.00802,
+      "end_date": "2028-11-07T00:00:00Z",
+      "token": "75720156002519829912361786945091022242706922246722836126941546028340974330171"
+    },
+    {
+      "side": "NO",
+      "question": "Putin out as President of Russia by end of 2026?",
+      "price": 0.885,
+      "profit": 0.11499999999999999,
+      "roi": 12.994350282485875,
+      "volume": 2177710.891473,
+      "liquidity": 96353.6703,
+      "end_date": "2026-12-31T18:30:00Z",
+      "token": "87073899845581463485186346288398658568334162612963837182986759797304993556208"
+    },
+    {
+      "side": "NO",
+      "question": "Will the San Antonio Spurs win the NBA Western Conference Finals?",
+      "price": 0.888,
+      "profit": 0.11199999999999999,
+      "roi": 12.612612612612612,
+      "volume": 59837.835113,
+      "liquidity": 74316.37459,
+      "end_date": "2026-06-16T00:00:00Z",
+      "token": "27815004243594045632881165458415700890962215209489505987194656563693307762869"
+    },
+    {
+      "side": "YES",
+      "question": "Will PSG win the 2025\u201326 French Ligue 1?",
+      "price": 0.89,
+      "profit": 0.10999999999999999,
+      "roi": 12.359550561797752,
+      "volume": 68964.377744,
+      "liquidity": 8434.1764,
+      "end_date": "2026-05-30T00:00:00Z",
+      "token": "37247697796314054477445671418600147171468572907588144854814679003872920679597"
+    },
+    {
+      "side": "NO",
+      "question": "Will Wesley Hunt win the 2026 Texas Republican Primary?",
+      "price": 0.8945,
+      "profit": 0.10550000000000004,
+      "roi": 11.794298490776974,
+      "volume": 689061.29206,
+      "liquidity": 22728.74397,
+      "end_date": "2026-03-03T00:00:00Z",
+      "token": "100333398771549990435986817872587460650263444431054342556176662063680731819090"
+    },
+    {
+      "side": "NO",
+      "question": "Will China invade Taiwan by end of 2026?",
+      "price": 0.895,
+      "profit": 0.10499999999999998,
+      "roi": 11.731843575418992,
+      "volume": 8442602.383913,
+      "liquidity": 533301.7805,
+      "end_date": "2026-12-31T00:00:00Z",
+      "token": "90772332434487149264114862115632028379978765245278600275169585501290867536237"
+    },
+    {
+      "side": "NO",
+      "question": "Will Argentina win the 2026 FIFA World Cup?",
+      "price": 0.895,
+      "profit": 0.10499999999999998,
+      "roi": 11.731843575418992,
+      "volume": 1452353.783097,
+      "liquidity": 390439.7725,
+      "end_date": "2026-07-20T00:00:00Z",
+      "token": "115428153746996892211798999366308897078723117634059783423375188043903703749062"
+    },
+    {
+      "side": "NO",
+      "question": "Will PSG win the 2025\u201326 Champions League?",
+      "price": 0.895,
+      "profit": 0.10499999999999998,
+      "roi": 11.731843575418992,
+      "volume": 2233637.693166,
+      "liquidity": 276514.4411,
+      "end_date": "2026-05-31T00:00:00Z",
+      "token": "17522237181479319953129418683394157683167669858670412329571078616243234898741"
+    },
+    {
+      "side": "NO",
+      "question": "Will Barcelona win the 2025\u201326 Champions League?",
+      "price": 0.895,
+      "profit": 0.10499999999999998,
+      "roi": 11.731843575418992,
+      "volume": 1439772.819843,
+      "liquidity": 140883.4397,
+      "end_date": "2026-05-31T00:00:00Z",
+      "token": "44316820324326475573649547254648033139339541714376543824778689356013656495018"
+    },
+    {
+      "side": "NO",
+      "question": "Will Alexandria Ocasio-Cortez win the 2028 Democratic presidential nomination?",
+      "price": 0.905,
+      "profit": 0.09499999999999997,
+      "roi": 10.49723756906077,
+      "volume": 3864815.795087,
+      "liquidity": 446983.3121,
+      "end_date": "2028-11-07T00:00:00Z",
+      "token": "65176072261324737856085688071627118509549293922582857186996392180609764586527"
+    },
+    {
+      "side": "NO",
+      "question": "Will Man City win the 2025\u201326 Champions League?",
+      "price": 0.905,
+      "profit": 0.09499999999999997,
+      "roi": 10.49723756906077,
+      "volume": 1161316.284312,
+      "liquidity": 224565.4601,
+      "end_date": "2026-05-31T00:00:00Z",
+      "token": "112574489854879876348403352508736279198755657572621272542900243530924839503706"
+    },
+    {
+      "side": "NO",
+      "question": "Will the Carolina Hurricanes win the 2026 NHL Stanley Cup?",
+      "price": 0.905,
+      "profit": 0.09499999999999997,
+      "roi": 10.49723756906077,
+      "volume": 92594.333903,
+      "liquidity": 77283.7942,
+      "end_date": "2026-06-30T00:00:00Z",
+      "token": "40473977441010332007887229299980126707900816205713676157646215720073415416624"
+    },
+    {
+      "side": "NO",
+      "question": "Will Trump pardon Ghislaine Maxwell by end of 2026?",
+      "price": 0.905,
+      "profit": 0.09499999999999997,
+      "roi": 10.49723756906077,
+      "volume": 407461.834938,
+      "liquidity": 40571.6705,
+      "end_date": "2026-12-31T00:00:00Z",
+      "token": "71144742975537017512904527392353107518472601816123355990566837993879064231255"
+    },
+    {
+      "side": "NO",
+      "question": "Will the U.S. collect between $200b and $500b in revenue in 2025?",
+      "price": 0.905,
+      "profit": 0.09499999999999997,
+      "roi": 10.49723756906077,
+      "volume": 710450.954067,
+      "liquidity": 10971.9296,
+      "end_date": "2026-02-28T12:00:00Z",
+      "token": "50221315964000194764695024582522009520159992363520263771661265416131198909217"
+    },
+    {
+      "side": "NO",
+      "question": "Will Rory McIlroy win the 2026 Masters tournament?",
+      "price": 0.91,
+      "profit": 0.08999999999999997,
+      "roi": 9.890109890109887,
+      "volume": 11460.024936,
+      "liquidity": 16779.992,
+      "end_date": "2026-04-13T00:00:00Z",
+      "token": "110721526829271696628816884619360240907697405805387139784530202893346118060669"
+    },
+    {
+      "side": "NO",
+      "question": "Will Lens win the 2025\u201326 French Ligue 1?",
+      "price": 0.91,
+      "profit": 0.08999999999999997,
+      "roi": 9.890109890109887,
+      "volume": 46139.509046,
+      "liquidity": 15442.218,
+      "end_date": "2026-05-30T00:00:00Z",
+      "token": "32562890083332327801535125145831767630420757200775626196821202901319165279557"
+    },
+    {
+      "side": "NO",
+      "question": "Will Brazil win the 2026 FIFA World Cup?",
+      "price": 0.915,
+      "profit": 0.08499999999999996,
+      "roi": 9.289617486338795,
+      "volume": 1175521.881379,
+      "liquidity": 549714.4124,
+      "end_date": "2026-07-20T00:00:00Z",
+      "token": "52986718774908357330412653486471347449818893503063830313445318937088822580057"
+    },
+    {
+      "side": "NO",
+      "question": "Will Liverpool win the 2025\u201326 Champions League?",
+      "price": 0.915,
+      "profit": 0.08499999999999996,
+      "roi": 9.289617486338795,
+      "volume": 1698935.036168,
+      "liquidity": 412067.6053,
+      "end_date": "2026-05-31T00:00:00Z",
+      "token": "61363321151738894082270158001558726485654573525177047497641264416022287833194"
+    },
+    {
+      "side": "NO",
+      "question": "Xi Jinping out before 2027?",
+      "price": 0.915,
+      "profit": 0.08499999999999996,
+      "roi": 9.289617486338795,
+      "volume": 6079258.6149,
+      "liquidity": 214983.3958,
+      "end_date": "2026-12-31T00:00:00Z",
+      "token": "25659310674993675562345759665114759892400026242514633218387667107987341231962"
+    },
+    {
+      "side": "NO",
+      "question": "Will the Minnesota Timberwolves win the NBA Western Conference Finals?",
+      "price": 0.9185,
+      "profit": 0.08150000000000002,
+      "roi": 8.873162765378337,
+      "volume": 145781.771822,
+      "liquidity": 78403.29018,
+      "end_date": "2026-06-16T00:00:00Z",
+      "token": "49028495687486892054365092594166410364434486278679913735039487330259821983425"
+    },
+    {
+      "side": "NO",
+      "question": "Will the Edmonton Oilers win the 2026 NHL Stanley Cup?",
+      "price": 0.925,
+      "profit": 0.07499999999999996,
+      "roi": 8.108108108108103,
+      "volume": 253791.958094,
+      "liquidity": 44110.4522,
+      "end_date": "2026-06-30T00:00:00Z",
+      "token": "93243135936056253080731148169253301176422868656587067154045597758216732275467"
+    },
+    {
+      "side": "NO",
+      "question": "Will Marco Rubio win the 2028 US Presidential Election?",
+      "price": 0.9255,
+      "profit": 0.07450000000000001,
+      "roi": 8.049702863317128,
+      "volume": 3259987.988338,
+      "liquidity": 269719.79044,
+      "end_date": "2028-11-07T00:00:00Z",
+      "token": "65892530750232246342273648992064742042382898919201083513241874070914353628268"
+    },
+    {
+      "side": "NO",
+      "question": "Will the Vegas Golden Knights win the 2026 NHL Stanley Cup?",
+      "price": 0.9255,
+      "profit": 0.07450000000000001,
+      "roi": 8.049702863317128,
+      "volume": 411311.244452,
+      "liquidity": 76326.46657,
+      "end_date": "2026-06-30T00:00:00Z",
+      "token": "58534831224432332845742394199681128700782343287162911891204466367752298448751"
+    },
+    {
+      "side": "NO",
+      "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
+      "price": 0.926,
+      "profit": 0.07399999999999995,
+      "roi": 7.991360691144703,
+      "volume": 3740136.461395,
+      "liquidity": 167893.09113,
+      "end_date": "2026-07-01T00:00:00Z",
+      "token": "12636035070565821048178968461063687179393834041535317885287743395873720755118"
+    },
+    {
+      "side": "NO",
+      "question": "Will Portugal win the 2026 FIFA World Cup?",
+      "price": 0.9275,
+      "profit": 0.07250000000000001,
+      "roi": 7.816711590296498,
+      "volume": 4876626.550457,
+      "liquidity": 223166.93445,
+      "end_date": "2026-07-20T00:00:00Z",
+      "token": "31940783580344558651011323787577288681658737625185216525249046282994042503801"
+    },
+    {
+      "side": "NO",
+      "question": "Will the Philadelphia 76ers win the NBA Eastern Conference Finals?",
+      "price": 0.9305,
+      "profit": 0.0695,
+      "roi": 7.469102632993015,
+      "volume": 161042.778134,
+      "liquidity": 66582.9043,
+      "end_date": "2026-06-13T00:00:00Z",
+      "token": "407336258606092316833789781486672854343361331985279263948001098476429338355"
+    },
+    {
+      "side": "NO",
+      "question": "Will OpenAI launch a new consumer hardware product by March 31, 2026?",
+      "price": 0.9315,
+      "profit": 0.0685,
+      "roi": 7.35373054213634,
+      "volume": 62523.072468,
+      "liquidity": 4714.53619,
+      "end_date": "",
+      "token": "15235916682414645873512796594946768179124144849305245659656321561016071235505"
+    },
+    {
+      "side": "NO",
+      "question": "Will the Detroit Pistons win the 2026 NBA Finals?",
+      "price": 0.9325,
+      "profit": 0.0675,
+      "roi": 7.238605898123325,
+      "volume": 3354681.920884,
+      "liquidity": 115721.34939,
+      "end_date": "2026-07-01T00:00:00Z",
+      "token": "17229559412398170618704225341353811929634795955092110836823940954753499964583"
+    },
+    {
+      "side": "NO",
+      "question": "Russia x Ukraine ceasefire by March 31, 2026?",
+      "price": 0.935,
+      "profit": 0.06499999999999995,
+      "roi": 6.951871657754005,
+      "volume": 16381005.94319,
+      "liquidity": 645175.4802,
+      "end_date": "2026-03-31T00:00:00Z",
+      "token": "82991837887127223585838300135823820957946688171642633953055760547186260528157"
+    },
+    {
+      "side": "NO",
+      "question": "Will Real Madrid win the 2025\u201326 Champions League?",
+      "price": 0.935,
+      "profit": 0.06499999999999995,
+      "roi": 6.951871657754005,
+      "volume": 1453155.470322,
+      "liquidity": 145569.1716,
+      "end_date": "2026-05-31T00:00:00Z",
+      "token": "12905796939799815677187294753823746821359945387637800747970148392857538825639"
+    }
+  ]
+}

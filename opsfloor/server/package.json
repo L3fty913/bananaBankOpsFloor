@@ -1,0 +1,16 @@
+{
+  "name": "opsfloor-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.6.0",
+    "nanoid": "^5.1.5"
+  }
+}

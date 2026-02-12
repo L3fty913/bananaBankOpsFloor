@@ -1,0 +1,10 @@
+#!/usr/bin/expect -f
+set timeout 20
+set host "167.71.13.170"
+set user "root"
+set pass "CaesarBot2026Poly"
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${user}@${host} "tail -100 /opt/polybot/scalper.log; echo '---PS---'; ps aux | grep -E 'scalper_v2|python' | grep -v grep"
+expect {
+  -re "(?i)password:" {send -- "$pass\r"; exp_continue}
+  eof
+}
