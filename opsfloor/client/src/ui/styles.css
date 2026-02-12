@@ -116,10 +116,10 @@ body:after{
   cursor:pointer;
 }
 .miniPill.active{color:var(--text);border-color:var(--accent)}
+.searchWrap{min-width:260px;flex:1;max-width:420px;display:flex;flex-direction:column;gap:4px}
 .agentSearch{
-  min-width:260px;
-  flex:1;
-  max-width:420px;
+  min-width:0;
+  width:100%;
   background:rgba(7,10,18,.9);
   color:var(--text);
   border:1px solid var(--border);
@@ -127,6 +127,7 @@ body:after{
   font-family:var(--mono);
 }
 .agentSearch:focus{outline:none;border-color:var(--accent)}
+.shortcutHint{font-family:var(--mono);font-size:11px;color:var(--muted)}
 .deskGrid{
   display:grid;
   grid-template-columns:repeat(4,minmax(220px,1fr));
@@ -146,6 +147,11 @@ body:after{
 .deskName{font-family:var(--mono);font-weight:900;}
 
 .deskCard{gap:10px; border-color:var(--border2)}
+.deskCard:focus-visible{
+  outline:2px solid var(--accent2);
+  outline-offset:2px;
+  box-shadow: inset 0 0 0 1px rgba(89,161,255,.45), 0 0 0 2px rgba(89,161,255,.25);
+}
 .managerAnchor{
   border-color:var(--accent);
   box-shadow: inset 0 0 0 1px rgba(89,161,255,.35), 0 0 0 1px rgba(89,161,255,.2);
@@ -187,6 +193,15 @@ body:after{
   cursor:pointer;
 }
 .btn:hover{border-color:var(--border2)}
+.btn:focus-visible,
+.tab:focus-visible,
+.miniPill:focus-visible,
+.item:focus-visible,
+.agentSearch:focus-visible,
+textarea:focus-visible{
+  outline:2px solid var(--accent2);
+  outline-offset:2px;
+}
 .btn.primary{border-color:var(--accent)}
 .btn:disabled{opacity:.45;cursor:not-allowed}
 

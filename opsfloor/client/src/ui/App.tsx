@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Virtuoso } from 'react-virtuoso';
 import type { Agent, Room, Message } from '../../../shared/types';
 import { API_BASE, jget, jpost } from './api';
@@ -70,6 +70,7 @@ export function App() {
   const [cooldownInfo, setCooldownInfo] = useState('');
   const [agentFilter, setAgentFilter] = useState<'all' | 'online' | 'working' | 'offline'>('all');
   const [agentQuery, setAgentQuery] = useState('');
+  const agentSearchRef = useRef<HTMLInputElement | null>(null);
 
   const rooms: Room[] = useMemo(() => {
     if (!state) return [] as any;
@@ -146,6 +147,22 @@ export function App() {
     return () => es.close();
   }, []);
 
+  useEffect(() => {
+    function onGlobalKeyDown(e: KeyboardEvent) {
+      const target = e.target as HTMLElement | null;
+      const tag = (target?.tagName || '').toLowerCase();
+      const isEditable = !!target?.closest('input, textarea, [contenteditable="true"]') || tag === 'input' || tag === 'textarea';
+      if (isEditable) return;
+      if (e.key === '/') {
+        e.preventDefault();
+        agentSearchRef.current?.focus();
+      }
+    }
+
+    window.addEventListener('keydown', onGlobalKeyDown);
+    return () => window.removeEventListener('keydown', onGlobalKeyDown);
+  }, []);
+
   function deskStatus(a: Agent) {
     if (Date.now() - a.lastSeen > 60_000) return 'offline';
     return a.status;
@@ -175,6 +192,10 @@ export function App() {
 
   function applyTemplate(t: string) {
     setText((prev) => (prev ? `${prev}\n${t}` : t));
+  }
+
+  function activateDeskPrimaryAction(agentId: string) {
+    setActiveRoomId(`agent-${agentId}`);
   }
 
   const activeRoom = rooms.find((r) => r.id === activeRoomId) || {
@@ -272,12 +293,17 @@ export function App() {
                   <button className={`miniPill ${agentFilter === 'working' ? 'active' : ''}`} onClick={() => setAgentFilter('working')}>Working {agentCounts.working}</button>
                   <button className={`miniPill ${agentFilter === 'offline' ? 'active' : ''}`} onClick={() => setAgentFilter('offline')}>Offline {agentCounts.offline}</button>
                 </div>
-                <input
-                  className="agentSearch"
-                  value={agentQuery}
-                  onChange={(e) => setAgentQuery(e.target.value)}
-                  placeholder="Search agent, role, or task…"
-                />
+                <div className="searchWrap">
+                  <input
+                    ref={agentSearchRef}
+                    className="agentSearch"
+                    value={agentQuery}
+                    onChange={(e) => setAgentQuery(e.target.value)}
+                    placeholder="Search agent, role, or task…"
+                    aria-label="Filter desks by agent name, role, or task"
+                  />
+                  <div className="shortcutHint" aria-hidden>Press / to focus search</div>
+                </div>
               </div>
               {filteredAgents.length === 0 ? (
                 <div className="desk emptyDesk">
@@ -311,6 +337,16 @@ export function App() {
                         key={a.id}
                         className={`desk deskCard ${slot.center ? 'managerAnchor' : ''}`}
                         style={{ gridColumn: slot.col, gridRow: slot.row }}
+                        tabIndex={0}
+                        role="group"
+                        aria-label={`${a.name} desk card. Press Enter or Space to open assign action.`}
+                        onKeyDown={(e) => {
+                          if (e.target !== e.currentTarget) return;
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            activateDeskPrimaryAction(a.id);
+                          }
+                        }}
                       >
                         <div className="deskHeaderRow">
                           <div className="agentAvatar" aria-hidden>{avatar}</div>
@@ -319,7 +355,7 @@ export function App() {
                             <div className="kv">desk: {a.id}</div>
                             <div className="kv">role: {a.role}</div>
                           </div>
-                          <div className={`status ${st}`}>{st}</div>
+                          <div className={`status ${st}`} aria-label={`Status: ${st}`}>{st}</div>
                         </div>
 
                         <div className="deskSection">
@@ -333,10 +369,10 @@ export function App() {
                         </div>
 
                         <div className="quickActions">
-                          <button className="btn primary" onClick={() => setActiveRoomId(`agent-${a.id}`)} title="Assign to desk">⚑ Assign</button>
-                          <button className="btn" title={disabledReason || 'Escalate'} disabled={!!disabledReason}>⇪ Escalate</button>
-                          <button className="btn" onClick={() => setActiveRoomId(`agent-${a.id}`)}>✉ Message</button>
-                          <button className="btn" title={disabledReason || 'Hold'} disabled={!!disabledReason}>⏸ Hold</button>
+                          <button className="btn primary" onClick={() => activateDeskPrimaryAction(a.id)} title="Assign to desk" aria-label={`Assign ${a.name}`}>⚑ Assign</button>
+                          <button className="btn" title={disabledReason || 'Escalate'} disabled={!!disabledReason} aria-label={`Escalate ${a.name}`}>⇪ Escalate</button>
+                          <button className="btn" onClick={() => setActiveRoomId(`agent-${a.id}`)} aria-label={`Message ${a.name}`}>✉ Message</button>
+                          <button className="btn" title={disabledReason || 'Hold'} disabled={!!disabledReason} aria-label={`Hold ${a.name}`}>⏸ Hold</button>
                         </div>
                         {disabledReason ? <div className="kv warn">{disabledReason}</div> : null}
                       </div>
@@ -348,7 +384,20 @@ export function App() {
                     const disabledReason = st === 'offline' ? 'Missing Role: AgentOnline' : '';
                     const avatar = AGENT_AVATARS[(a.id || '').toLowerCase()] || initials(a.name || a.id || 'Agent');
                     return (
-                      <div key={a.id} className="desk deskCard overflowDesk">
+                      <div
+                        key={a.id}
+                        className="desk deskCard overflowDesk"
+                        tabIndex={0}
+                        role="group"
+                        aria-label={`${a.name} desk card. Press Enter or Space to open assign action.`}
+                        onKeyDown={(e) => {
+                          if (e.target !== e.currentTarget) return;
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            activateDeskPrimaryAction(a.id);
+                          }
+                        }}
+                      >
                         <div className="deskHeaderRow">
                           <div className="agentAvatar" aria-hidden>{avatar}</div>
                           <div className="deskIdentity">
@@ -356,17 +405,17 @@ export function App() {
                             <div className="kv">desk: {a.id}</div>
                             <div className="kv">role: {a.role}</div>
                           </div>
-                          <div className={`status ${st}`}>{st}</div>
+                          <div className={`status ${st}`} aria-label={`Status: ${st}`}>{st}</div>
                         </div>
                         <div className="deskSection">
                           <div className="sectionLabel">Task Summary</div>
                           <div className="taskSummary">{summarizeTask(a.currentTask || '')}</div>
                         </div>
                         <div className="quickActions">
-                          <button className="btn primary" onClick={() => setActiveRoomId(`agent-${a.id}`)}>⚑ Assign</button>
-                          <button className="btn" title={disabledReason || 'Escalate'} disabled={!!disabledReason}>⇪ Escalate</button>
-                          <button className="btn" onClick={() => setActiveRoomId(`agent-${a.id}`)}>✉ Message</button>
-                          <button className="btn" title={disabledReason || 'Hold'} disabled={!!disabledReason}>⏸ Hold</button>
+                          <button className="btn primary" onClick={() => activateDeskPrimaryAction(a.id)} aria-label={`Assign ${a.name}`}>⚑ Assign</button>
+                          <button className="btn" title={disabledReason || 'Escalate'} disabled={!!disabledReason} aria-label={`Escalate ${a.name}`}>⇪ Escalate</button>
+                          <button className="btn" onClick={() => setActiveRoomId(`agent-${a.id}`)} aria-label={`Message ${a.name}`}>✉ Message</button>
+                          <button className="btn" title={disabledReason || 'Hold'} disabled={!!disabledReason} aria-label={`Hold ${a.name}`}>⏸ Hold</button>
                         </div>
                       </div>
                     );
